@@ -1,0 +1,156 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Style the body element */
+body {
+    width: 100%;
+    height: 100vh;
+    color: #000;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add a background image with a blend mode and blur effect */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(228, 146, 160) url(/img/bg.webp);
+    background-blend-mode: multiply;
+    z-index: -2;
+    filter: blur(3px);
+}
+
+/* Style the header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style the header text */
+header h1 {
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Style the main content area */
+main.content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Style the container */
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Style the form and output sections */
+section.form-section,
+section.output-section {
+    width: 100%;
+    max-width: 550px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Style the labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style the input, select, and textarea elements */
+input[type="text"],
+select,
+textarea {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1em;
+    background: transparent;
+    outline: none;
+    color: #333;
+}
+
+/* Adjust the height of the select element for multiple selections */
+select {
+    height: auto;
+}
+
+/* Allow vertical resizing for the textarea */
+textarea {
+    resize: vertical;
+}
+
+/* Style the buttons */
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+/* Change button background color on hover */
+button:hover {
+    background-color: #555;
+}
+
+/* Hide the output section by default */
+.output-section.hidden {
+    display: none;
+}
+
+/* Ensure the output section is displayed when not hidden */
+.output-section {
+    display: block;
+}
+
+/* Style the heading in the output section */
+.output-section h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #444;
+}
+
+/* Style the divs in the output section */
+.output-section div {
+    padding: 10px;
+    background-color: rgb(240, 132, 150);
+    border-radius: 5px;
+    border: 1px solid #eee;
+    font-size: 1em;
+    line-height: 1.5em;
+}

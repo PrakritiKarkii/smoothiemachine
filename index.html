@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Smoothie Machine</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>The Smoothie Machine</h1>
+    </header>
+
+    <main class="content">
+      <section class="form-section">
+        <form id="smoothieForm">
+          <!-- Input for smoothie name -->
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <!-- Dropdown for selecting a base -->
+          <div class="form-group">
+            <label for="base">Choose a base:</label>
+            <select id="base" name="base" required>
+              <option value="water" data-price="0">Water ($0)</option>
+              <option value="milk" data-price="1">Milk ($1)</option>
+              <option value="yogurt" data-price="1.5">Yogurt ($1.5)</option>
+              <option value="almond_milk" data-price="2">
+                Almond Milk ($2)
+              </option>
+              <option value="soy_milk" data-price="1.5">Soy Milk ($1.5)</option>
+              <option value="coconut_milk" data-price="2.5">
+                Coconut Milk ($2.5)
+              </option>
+            </select>
+          </div>
+
+          <!-- Dropdown for selecting fruits -->
+          <div class="form-group">
+            <label for="fruits">Choose your fruits:</label>
+            <select id="fruits" name="fruits" required>
+              <option value="banana" data-price="0.5">Banana ($0.5)</option>
+              <option value="strawberry" data-price="0.75">
+                Strawberry ($0.75)
+              </option>
+              <option value="blueberry" data-price="1">Blueberry ($1)</option>
+              <option value="mango" data-price="1.2">Mango ($1.2)</option>
+              <option value="pineapple" data-price="1">Pineapple ($1)</option>
+            </select>
+          </div>
+
+          <!-- Dropdown for selecting a sweetener -->
+          <div class="form-group">
+            <label for="sweetener">Sweetener:</label>
+            <select id="sweetener" name="sweetener" required>
+              <option value="sugar" data-price="0.25">Sugar ($0.25)</option>
+              <option value="honey" data-price="0.5">Honey ($0.5)</option>
+              <option value="none" data-price="0">None ($0)</option>
+            </select>
+          </div>
+
+          <!-- Textarea for additional notes -->
+          <div class="form-group">
+            <label for="note">Additional Notes:</label>
+            <textarea
+              id="note"
+              name="note"
+              rows="4"
+              placeholder="Add any special instructions here..."
+            ></textarea>
+          </div>
+
+          <!-- Button to order the smoothie -->
+          <button type="button" onclick="orderSmoothie()">Order</button>
+        </form>
+      </section>
+
+      <!-- Section to display the smoothie output and total price -->
+      <section id="output" class="output-section hidden">
+        <h3>Your Smoothie</h3>
+        <div id="smoothieOutput"></div>
+        <div id="totalPrice"></div>
+        <!-- Reset button to reset the form and clear output -->
+        <button type="button" onclick="resetForm()">Reset</button>
+      </section>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
